@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | Kattalk</title>
+
+    <script
+      src="https://kit.fontawesome.com/2a0a00e374.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="/src/scss/styles.css" />
+  </head>
+
+  <body class="bg-light">
+    <nav class="navbar navbar-expand shadow-sm bg-white">
+      <div class="container">
+        <a href="/index.html" class="navbar-brand"
+          ><i class="fa-solid fa-shield-cat fa-2x"></i
+        ></a>
+
+        <form class="form-inline d-flex">
+          <input
+            class="form-control mr-sm-2 mx-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >User</a
+            >
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/html/userprofile.html"
+                >View Profile</a
+              >
+              <a class="dropdown-item" href="/html/login.html">Log in</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Log out</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!-- <div class="container">
+        <div class="row img-container rounded-circle shadow-sm bg-white">
+          <img
+            src="/img/user1.jpg"
+            alt="user1 profile picture"
+            class="rounded-circle img-profile p-1"
+          />
+          <div class="mb-5"><h1>User1</h1></div>
+        </div>
+      </div> -->
+
+      <!-- <div class="container">
+        <div class="card mt-5">
+          <div class="card-body">
+            <img src="/img/user1.jpg" alt="user1 profile picture" />
+            <h1 class="my-2">User1</h1>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="container mt-5 px-4">
+        <div class="row row-cols-1 gy-3 gx-5">
+          <div class="col-lg-5">
+            <div class="row g-3">
+              <div class="card card-custom mt-4 shadow-sm bg-white border-0">
+                <div class="card-body">
+                  <h2 class="card-title fs-4">Bio</h2>
+                  <div class="card-text">
+                    Birthday: June 24th 1997
+                    <br />
+                    Gender: Male
+                    <br />
+                    Status: Single
+                    <br />
+                    Location: Honolulu, Hawaii
+                  </div>
+                </div>
+              </div>
+
+              <div class="card card-custom mt-4 shadow-sm bg-white border-0">
+                <div class="card-body">
+                  <h2 class="card-title fs-4">Contacts</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="card card-custom mt-4 shadow-sm bg-white border-0">
+                <div class="card-body">
+                  <div class="row">
+                    <img
+                      class="col-2 col-sm-2 rounded-circle img-user m-0"
+                      src="/img/user1.jpg"
+                      alt="user1"
+                    />
+                    <form class="m-0 ps-0 col align-self-center">
+                      <input
+                        type="text"
+                        id="comment"
+                        class="form-control rounded-pill"
+                        placeholder="What's on your mind, user1?"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card card-custom mt-4 shadow-sm bg-white border-0">
+                <div class="card-body">
+                  <div class="row">
+                    <img
+                      class="col-2 col-sm-2 rounded-circle img-user m-0"
+                      src="/img/user1.jpg"
+                      alt="user1"
+                    />
+                    <h2 class="card-title col fs-5 m-0">user1</h2>
+                    <div class="card-text pt-3">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Ratione, voluptas adipisci? Necessitatibus beatae nam, rem
+                      voluptate neque, dolores, numquam fugit ratione sequi amet
+                      quam odit. Aperiam nam quia deserunt distinctio.
+                    </div>
+
+                    <div
+                      class="d-flex justify-content-center border-top border-bottom mt-3"
+                    >
+                      <button class="btn m-1 col-6 align-self-center">
+                        <i class="fa-regular fa-heart me-2"></i>Like
+                      </button>
+                      <button
+                        class="btn m-1 col-6"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#collapseComment"
+                        aria-expanded="false"
+                        aria-controls="collapseComment"
+                      >
+                        <i class="fa-regular fa-comment me-2"></i>
+                        Comment
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseComment">
+                      <form class="m-2">
+                        <input
+                          type="text"
+                          id="comment"
+                          class="form-control rounded-pill"
+                          placeholder="Write a comment..."
+                        />
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

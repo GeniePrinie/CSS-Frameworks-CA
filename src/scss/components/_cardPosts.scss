@@ -1,0 +1,11 @@
+.img-user{
+    object-fit: cover;
+    
+  }
+
+  @include media-breakpoint-up(lg){
+    .card-custom{
+        width: 700px;
+      }
+  }
+  
