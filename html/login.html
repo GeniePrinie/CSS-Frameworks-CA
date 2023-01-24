@@ -64,7 +64,7 @@
         class="card card-custom pt-4 my-4 mx-auto d-md-flex justify-content-center border-0 shadow-sm bg-white"
       >
         <h1 class="fs-2 text-primary text-center m-009">Log in</h1>
-        <form class="form-login" novalidate>
+        <form action="/profile" class="form-login" novalidate>
           <div class="form-floating my-4 mx-3">
             <input
               type="email"
@@ -110,7 +110,12 @@
         </p>
         <div class="collapse" id="collapseForm">
           <div class="card card-custom card-body border-0">
-            <form class="form-new-account" id="form-new-account" novalidate>
+            <form
+              action="/profile"
+              class="form-new-account"
+              id="form-new-account"
+              novalidate
+            >
               <div class="form-floating mb-4">
                 <input
                   type="text"
