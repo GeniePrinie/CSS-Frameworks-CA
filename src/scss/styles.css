@@ -10942,6 +10942,10 @@ li.dropdown:last-child .dropdown-menu {
   height: auto;
 }
 
+.card-custom {
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   .card-custom {
     width: 700px;
