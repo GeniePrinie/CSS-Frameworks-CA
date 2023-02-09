@@ -10946,6 +10946,15 @@ li.dropdown:last-child .dropdown-menu {
   width: 100%;
 }
 
+.fa-ellipsis-vertical {
+  cursor: pointer;
+}
+
+li.dropdown:last-child .dots-edit {
+  right: 0;
+  left: auto;
+}
+
 @media (min-width: 992px) {
   .card-custom {
     width: 700px;

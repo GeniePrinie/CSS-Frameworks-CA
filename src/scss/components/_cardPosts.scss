@@ -5,9 +5,18 @@
     
   }
 
-  .card-custom{
+.card-custom{
     width: 100%;
-  }
+}
+
+.fa-ellipsis-vertical{
+  cursor: pointer;
+}
+
+li.dropdown:last-child .dots-edit {
+  right: 0;
+  left: auto;
+}
 
   @include media-breakpoint-up(lg){
     .card-custom{
