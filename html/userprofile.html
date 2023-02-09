@@ -123,36 +123,47 @@
                   <h2 class="card-title fs-4">Contacts</h2>
                   <div class="row row-cols-3 gy-4">
                     <div class="col">
-                      <img
-                        src="/img/friend1.jpg"
-                        alt="Alberto Leche"
-                        class="img-friends rounded"
-                      />
-                      <div class="card-text">Alberto Leche</div>
+                      <a href="#" class="text-decoration-none text-black">
+                        <img
+                          src="/img/friend1.jpg"
+                          alt="Alberto Leche"
+                          class="img-friends rounded"
+                        />
+                        <div class="card-text">Alberto Leche</div>
+                      </a>
                     </div>
+
                     <div class="col">
-                      <img
-                        src="/img/friend2.jpg"
-                        alt="Jennifer Park"
-                        class="img-friends rounded"
-                      />
-                      <div class="card-text">Jennifer Park</div>
+                      <a href="#" class="text-decoration-none text-black">
+                        <img
+                          src="/img/friend2.jpg"
+                          alt="Jennifer Park"
+                          class="img-friends rounded"
+                        />
+                        <div class="card-text">Jennifer Park</div>
+                      </a>
                     </div>
+
                     <div class="col">
-                      <img
-                        src="/img/friend3.jpg"
-                        alt="Aileen Song"
-                        class="img-friends rounded"
-                      />
-                      <div class="card-text">Aileen Song</div>
+                      <a href="#" class="text-decoration-none text-black">
+                        <img
+                          src="/img/friend3.jpg"
+                          alt="Aileen Song"
+                          class="img-friends rounded"
+                        />
+                        <div class="card-text">Aileen Song</div>
+                      </a>
                     </div>
+
                     <div class="col">
-                      <img
-                        src="/img/friend4.jpg"
-                        alt="Marcus Parker"
-                        class="img-friends rounded"
-                      />
-                      <div class="card-text">Marcus Parker</div>
+                      <a href="#" class="text-decoration-none text-black">
+                        <img
+                          src="/img/friend4.jpg"
+                          alt="Marcus Parker"
+                          class="img-friends rounded"
+                        />
+                        <div class="card-text">Marcus Parker</div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -191,9 +202,30 @@
                       alt="Adam Murphy"
                     />
                     <h2 class="card-title col fs-5 m-0">Adam Murphy</h2>
-                    <i
-                      class="fa-solid fa-ellipsis-vertical col-1 text-end pe-1"
-                    ></i>
+                    <ul class="navbar-nav mr-auto col-1 text-end pe-1">
+                      <li class="nav-item dropdown">
+                        <a
+                          href="#"
+                          class="nav-link pt-0"
+                          id="navbarDropdown"
+                          role="button"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          ><i class="fa-solid fa-ellipsis-vertical"></i
+                        ></a>
+                        <div
+                          class="dropdown-menu dots-edit"
+                          aria-labelledby="navbarDropdown"
+                        >
+                          <button class="dropdown-item">Edit</button>
+
+                          <div class="dropdown-divider"></div>
+                          <button class="dropdown-item">Delete</button>
+                        </div>
+                      </li>
+                    </ul>
+
                     <div class="card-text pt-3">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                       Ratione, voluptas adipisci? Necessitatibus beatae nam, rem
