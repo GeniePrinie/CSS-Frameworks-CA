@@ -10942,6 +10942,13 @@ li.dropdown:last-child .dropdown-menu {
   height: auto;
 }
 
+.img-comment {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60px;
+  height: auto;
+}
+
 .card-custom {
   width: 100%;
 }
