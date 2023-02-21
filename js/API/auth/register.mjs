@@ -8,12 +8,16 @@ export async function register(profile) {
   const body = JSON.stringify(profile);
 
   const response = await fetch(registerURL, {
+    method: method,
     headers: {
       "Content-Type": "application/json charset=utf-8",
     },
-    method,
-    body,
+    body: body,
   });
-  const result = await response.json();
-  console.log(result);
+
+  if (!response.ok) {
+    throw new Error(`Invalid user input: Http Status ${response.status}`);
+  }
+
+  return await response.json();
 }
