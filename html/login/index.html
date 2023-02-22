@@ -72,18 +72,20 @@
           >
             <div class="form-floating my-4 mx-3">
               <input
-                type="text"
+                type="email"
                 class="form-control"
-                id="existedUsername"
-                name="name"
+                id="existedEmail"
+                name="email"
                 placeholder="Username"
                 required
-                pattern="^[\w]+$"
-                maxlength="20"
+                pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                title="Only @(stud.)noroff.no domains are allowed"
               />
-              <label for="existedUsername" class="form-label">Username</label>
+              <label for="existedEmail" class="form-label">Email</label>
 
-              <div class="invalid-feedback">User name required</div>
+              <div class="invalid-feedback">
+                Only @(stud.)noroff.no domains are allowed
+              </div>
             </div>
 
             <div class="form-floating my-4 mx-3">
@@ -102,7 +104,9 @@
               <div class="invalid-feedback">Password required</div>
             </div>
 
-            <button type="submit" class="btn btn-primary m-3">Submit</button>
+            <button type="submit" class="btn btn-primary m-3 btn-submit">
+              Submit
+            </button>
           </form>
 
           <p>
