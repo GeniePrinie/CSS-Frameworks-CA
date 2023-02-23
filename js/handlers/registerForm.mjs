@@ -28,11 +28,12 @@ export function setRegisterFormListener() {
 
 function handleSuccessful(user) {
   createModal(`User for <b>${user.name}</b> created successfully.`);
-
   const clearForm = document.querySelector(".modal-close");
   clearForm.addEventListener("click", reloadPage);
 }
 
 function handleUnsuccessful(error) {
-  createModal(`User not created. <em>${error.message}</em>.`);
+  createModal(
+    `User not created. <br>Error message: <em>${error.message}</em>.`
+  );
 }

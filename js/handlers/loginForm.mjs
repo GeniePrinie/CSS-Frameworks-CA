@@ -1,9 +1,9 @@
-import { reloadPage } from "../globals/reload.mjs";
+import { createModal } from "../globals/modal.mjs";
 import { login } from "../controllers/userController.mjs";
 
-export function setLoginFormListener() {
-  const formLogin = document.querySelector(".form-login");
+const formLogin = document.querySelector(".form-login");
 
+export function setLoginFormListener() {
   if (formLogin) {
     formLogin.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -14,12 +14,23 @@ export function setLoginFormListener() {
       const formData = new FormData(form);
       const profile = Object.fromEntries(formData.entries());
 
-      login(profile);
+      login(profile)
+        .then(() => {
+          handleSuccessful();
+        })
+        .catch((error) => {
+          handleUnsuccessful(error);
+        });
     });
   }
 }
 
-const clearForm = document.querySelector(".btn-submit");
-clearForm.addEventListener("click", function () {
-  setTimeout(reloadPage, 1000);
-});
+function handleSuccessful() {
+  window.location.replace("/");
+}
+
+function handleUnsuccessful(error) {
+  createModal(
+    `Invalid user credentials. <br>Error message: <em>${error.message}</em>.`
+  );
+}

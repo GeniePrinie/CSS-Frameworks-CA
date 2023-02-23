@@ -1,5 +1,15 @@
 import { load } from "../globals/storage.mjs";
 
+export async function fetchToken(url, method, body) {
+  return await fetch(url, {
+    method: method,
+    body: body,
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+}
+
 export async function fetchData(url, method, body) {
   const token = load("token");
   let options = {

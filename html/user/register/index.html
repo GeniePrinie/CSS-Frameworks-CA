@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description="
-      content="Log in to Kattalk social application account or create a new one here."
+      content="Create a new user to Kattalk social application account."
     />
-    <title>Log in | Kattalk</title>
+    <title>Register new user | Kattalk</title>
     <script
       src="https://kit.fontawesome.com/2a0a00e374.js"
       crossorigin="anonymous"
@@ -61,155 +61,101 @@
           <i
             class="fa-solid fa-shield-cat fa-5x text-primary text-center mt-3"
           ></i>
-          <h1 class="fs-2 text-primary text-center m-3">Log in</h1>
+          <h1 class="fs-2 text-primary text-center m-3">Register new user</h1>
 
-          <!-- Log in -->
-          <form
-            method="post"
-            action="/js/API/auth/login.mjs"
-            class="form-login"
-            novalidate
-          >
-            <div class="form-floating my-4 mx-3">
-              <input
-                type="email"
-                class="form-control"
-                id="existedEmail"
-                name="email"
-                placeholder="Username"
-                required
-                pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-                title="Only @(stud.)noroff.no domains are allowed"
-              />
-              <label for="existedEmail" class="form-label">Email</label>
+          <div class="card card-custom card-body border-0">
+            <!-- register form -->
+            <form class="form-register" id="form-register" novalidate>
+              <div class="form-floating mb-4">
+                <input
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="username"
+                  placeholder="Username"
+                  required
+                  pattern="^[\w]+$"
+                  maxlength="20"
+                  title="User name must only contain lower case and upper case letters, numbers and underscore (_). Example: My_Username123"
+                />
+                <label for="username" class="form-label">Username</label>
 
-              <div class="invalid-feedback">
-                Only @(stud.)noroff.no domains are allowed
+                <div class="invalid-feedback">
+                  User name must only contain lower case and upper case letters,
+                  numbers and underscore (_). Example: My_Username123
+                </div>
               </div>
-            </div>
 
-            <div class="form-floating my-4 mx-3">
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                name="password"
-                placeholder="Password"
-                required
-                minlength="8"
-                title="minimum 8
-              characters"
-              />
-              <label for="password">Password</label>
-              <div class="invalid-feedback">Password required</div>
-            </div>
-
-            <button type="submit" class="btn btn-primary m-3 btn-submit">
-              Submit
-            </button>
-          </form>
-
-          <p>
-            <button
-              class="btn border-0 text-decoration-underline btn-dropdown"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseForm"
-              aria-expanded="false"
-              aria-controls="collapseForm"
-            >
-              Create new account
-            </button>
-          </p>
-          <div class="collapse" id="collapseForm">
-            <div class="card card-custom card-body border-0">
-              <!-- register form -->
-              <form class="form-register" id="form-register" novalidate>
-                <div class="form-floating mb-4">
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="username"
-                    placeholder="Username"
-                    required
-                    pattern="^[\w]+$"
-                    maxlength="20"
-                    title="User name must only contain lower case and upper case letters, numbers and underscore (_). Example: My_Username123"
-                  />
-                  <label for="username" class="form-label">Username</label>
-
-                  <div class="invalid-feedback">
-                    User name must only contain lower case and upper case
-                    letters, numbers and underscore (_). Example: My_Username123
-                  </div>
+              <div class="form-floating mb-4">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  required
+                  pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  title="Only @(stud.)noroff.no domains are allowed"
+                />
+                <label for="email">Email</label>
+                <div class="invalid-feedback">
+                  Only @(stud.)noroff.no domains are allowed
                 </div>
+              </div>
 
-                <div class="form-floating mb-4">
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Enter email"
-                    required
-                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-                    title="Only @(stud.)noroff.no domains are allowed"
-                  />
-                  <label for="email">Email</label>
-                  <div class="invalid-feedback">
-                    Only @(stud.)noroff.no domains are allowed
-                  </div>
-                </div>
+              <div class="form-floating mb-4">
+                <input
+                  type="url"
+                  class="form-control"
+                  name="banner"
+                  id="banner"
+                  placeholder="Banner"
+                />
+                <label for="banner" class="form-label">Banner</label>
+              </div>
 
-                <div class="form-floating mb-4">
-                  <input
-                    type="url"
-                    class="form-control"
-                    name="banner"
-                    id="banner"
-                    placeholder="Banner"
-                  />
-                  <label for="banner" class="form-label">Banner</label>
-                </div>
+              <div class="form-floating mb-4">
+                <input
+                  type="url"
+                  class="form-control"
+                  name="avatar"
+                  id="avatar"
+                  placeholder="avatar"
+                />
+                <label for="avatar" class="form-label">Avatar</label>
+              </div>
 
-                <div class="form-floating mb-4">
-                  <input
-                    type="url"
-                    class="form-control"
-                    name="avatar"
-                    id="avatar"
-                    placeholder="avatar"
-                  />
-                  <label for="avatar" class="form-label">Avatar</label>
-                </div>
+              <div class="form-floating mb-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="newpassword"
+                  placeholder="Password"
+                  required
+                  minlength="8"
+                />
+                <label for="newpassword">Password</label>
+                <div class="invalid-feedback">Minimum 8 characters</div>
+              </div>
 
-                <div class="form-floating mb-4">
-                  <input
-                    type="password"
-                    class="form-control"
-                    name="password"
-                    id="newpassword"
-                    placeholder="Password"
-                    required
-                    minlength="8"
-                  />
-                  <label for="newpassword">Password</label>
-                  <div class="invalid-feedback">Minimum 8 characters</div>
-                </div>
-
-                <button
-                  class="btn btn-primary"
-                  type="submit"
-                  form="form-register"
-                  data-toggle="modal"
-                  data-target="#feedbackModal"
-                >
-                  Create
-                </button>
-              </form>
-            </div>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                form="form-register"
+                data-toggle="modal"
+                data-target="#feedbackModal"
+              >
+                Create
+              </button>
+            </form>
           </div>
+
+          <a href="../login/">
+            <button class="btn border-0 text-decoration-underline mb-3">
+              Log in
+            </button>
+          </a>
         </div>
       </div>
     </main>
