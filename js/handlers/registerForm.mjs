@@ -1,6 +1,6 @@
-import { register } from "../API/auth/register.mjs";
-import { createModal } from "../API/modal.mjs";
-import { reloadPage } from "../API/reload.mjs";
+import { createModal } from "../globals/modal.mjs";
+import { reloadPage } from "../globals/reload.mjs";
+import { register } from "../controllers/userController.mjs";
 
 const formNewAccount = document.querySelector(".form-register");
 

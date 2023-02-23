@@ -1,5 +1,5 @@
-import { login } from "../API/auth/login.mjs";
-import { reloadPage } from "../API/reload.mjs";
+import { reloadPage } from "../globals/reload.mjs";
+import { login } from "../controllers/userController.mjs";
 
 export function setLoginFormListener() {
   const formLogin = document.querySelector(".form-login");
