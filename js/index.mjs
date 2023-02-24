@@ -59,14 +59,14 @@ switch (path) {
 //     console.log(error);
 //   });
 
-// getEntry(3519)
-//   .then((data) => {
-//     console.log(data);
-//     console.log(JSON.stringify(data));
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+getEntry(3519)
+  .then((data) => {
+    console.log(data);
+    console.log(JSON.stringify(data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // updateEntry(3526, {
 //   title: "string",
