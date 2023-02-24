@@ -1,6 +1,6 @@
 import { load } from "../globals/storage.mjs";
 
-export async function fetchToken(url, method, body) {
+export async function fetchRequestWithoutToken(url, method, body) {
   return await fetch(url, {
     method: method,
     body: body,
@@ -10,7 +10,7 @@ export async function fetchToken(url, method, body) {
   });
 }
 
-export async function fetchData(url, method, body) {
+export async function fetchRequestWithToken(url, method, body) {
   const token = load("token");
   let options = {
     method: method,

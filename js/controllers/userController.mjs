@@ -1,16 +1,17 @@
 import { API_SOCIAL_URL } from "../globals/constants.mjs";
 import { save, remove } from "../globals/storage.mjs";
-import { fetchToken } from "../globals/api.mjs";
+import { fetchRequestWithoutToken } from "../globals/api.mjs";
 
 export async function register(profile) {
-  const registerURL = API_SOCIAL_URL + "/auth/register";
-  const body = JSON.stringify(profile);
+  const apiEndpoint = API_SOCIAL_URL + "/auth/register";
+  const apiMethod = "POST";
+  const apiBody = JSON.stringify(profile);
 
-  const response = await fetch(registerURL, {
-    method: "post",
-    headers: { "Content-Type": "application/json charset=utf-8" },
-    body: body,
-  });
+  const response = await fetchRequestWithoutToken(
+    apiEndpoint,
+    apiMethod,
+    apiBody
+  );
 
   if (!response.ok) {
     throw new Error(`Invalid user input: Http Status ${response.status}`);
@@ -24,7 +25,11 @@ export async function login(profile) {
   const apiMethod = "POST";
   const apiBody = JSON.stringify(profile);
 
-  const response = await fetchToken(apiEndpoint, apiMethod, apiBody);
+  const response = await fetchRequestWithoutToken(
+    apiEndpoint,
+    apiMethod,
+    apiBody
+  );
 
   if (!response.ok) {
     throw new Error(`Invalid user: Http Status ${response.status}`);
@@ -39,5 +44,4 @@ export async function login(profile) {
 export async function logout() {
   remove("token");
   remove("profile");
-  //window.location.replace("/html/user/login");
 }

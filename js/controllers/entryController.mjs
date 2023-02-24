@@ -1,12 +1,12 @@
 import { API_SOCIAL_URL, API_EXTRA_DATA } from "../globals/constants.mjs";
-import { fetchData } from "../globals/api.mjs";
+import { fetchRequestWithToken } from "../globals/api.mjs";
 
 export async function getEntry(id) {
   const apiEndpoint = API_SOCIAL_URL + "/posts/" + id + API_EXTRA_DATA;
   const apiMethod = "GET";
   const apiBody = "";
 
-  const response = await fetchData(apiEndpoint, apiMethod, apiBody);
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
 
   if (!response.ok) {
     throw new Error(`Invalid entry id: Http Status ${response.status}`);
@@ -20,7 +20,7 @@ export async function getEntries() {
   const apiMethod = "GET";
   const apiBody = "";
 
-  const response = await fetchData(apiEndpoint, apiMethod, apiBody);
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
 
   if (!response.ok) {
     throw new Error(`Invalid endpoint: Http Status ${response.status}`);

@@ -1,5 +1,5 @@
 import { createModal } from "../globals/modal.mjs";
-import { reloadPage } from "../globals/reload.mjs";
+import { redirectToLogin } from "../globals/redirect.mjs";
 import { register } from "../controllers/userController.mjs";
 
 const formNewAccount = document.querySelector(".form-register");
@@ -29,7 +29,7 @@ export function setRegisterFormListener() {
 function handleSuccessful(user) {
   createModal(`User for <b>${user.name}</b> created successfully.`);
   const clearForm = document.querySelector(".modal-close");
-  clearForm.addEventListener("click", reloadPage);
+  clearForm.addEventListener("click", redirectToLogin);
 }
 
 function handleUnsuccessful(error) {

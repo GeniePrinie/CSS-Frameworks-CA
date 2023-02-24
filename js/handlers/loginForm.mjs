@@ -1,5 +1,6 @@
 import { createModal } from "../globals/modal.mjs";
 import { login } from "../controllers/userController.mjs";
+import { redirectToHome } from "../globals/redirect.mjs";
 
 const formLogin = document.querySelector(".form-login");
 
@@ -26,7 +27,8 @@ export function setLoginFormListener() {
 }
 
 function handleSuccessful() {
-  window.location.replace("/");
+  createModal(`Successful login.`);
+  redirectToHome();
 }
 
 function handleUnsuccessful(error) {

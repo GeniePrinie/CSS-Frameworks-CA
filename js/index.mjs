@@ -2,6 +2,7 @@ import { setRegisterFormListener } from "./handlers/registerForm.mjs";
 import { setLoginFormListener } from "./handlers/loginForm.mjs";
 import { setLogoutFormListener } from "./handlers/logoutForm.mjs";
 import { load } from "./globals/storage.mjs";
+import { redirectToHome, redirectToLogin } from "./globals/redirect.mjs";
 
 const path = location.pathname;
 const token = load("token");
@@ -10,13 +11,13 @@ switch (path) {
   case "/":
   case "/index.html":
     if (token === null) {
-      window.location.replace("/html/user/login");
+      redirectToLogin();
     }
     break;
 
   case "/html/user/login/":
     if (token !== null) {
-      window.location.replace("/");
+      redirectToHome();
     }
     setLoginFormListener();
     break;
