@@ -1,22 +1,8 @@
 import { API_SOCIAL_URL, API_EXTRA_DATA } from "../globals/constants.mjs";
 import { fetchRequestWithToken } from "../globals/api.mjs";
 
-export async function getEntry(id) {
-  const apiEndpoint = API_SOCIAL_URL + "/posts/" + id + API_EXTRA_DATA;
-  const apiMethod = "GET";
-  const apiBody = "";
-
-  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
-
-  if (!response.ok) {
-    throw new Error(`Invalid entry id: Http Status ${response.status}`);
-  }
-
-  return await response.json();
-}
-
 export async function getEntries() {
-  const apiEndpoint = API_SOCIAL_URL + "/posts";
+  const apiEndpoint = `${API_SOCIAL_URL}/posts`;
   const apiMethod = "GET";
   const apiBody = "";
 
@@ -29,41 +15,86 @@ export async function getEntries() {
   return await response.json();
 }
 
-// export async function createEntry(postData) {
-// const createEntryURL = API_SOCIAL_URL + action;
-// const token = load("token");
+export async function getEntry(id) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts/${id}${API_EXTRA_DATA}`;
+  const apiMethod = "GET";
+  const apiBody = "";
 
-// const response = await authfetch(createEntryURL, {
-//     method: "POST",
-//     body: JSON.stringify(postData),
-// });
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
 
-// const entry = await response.json();
-// console.log(entry);
-// }
+  if (!response.ok) {
+    throw new Error(`Invalid entry id: Http Status ${response.status}`);
+  }
 
-// export async function updateEntry(postData) {
-// const createEntryURL = API_SOCIAL_URL + action;
-// const token = load("token");
+  return await response.json();
+}
 
-// const response = await authfetch(createEntryURL, {
-//     method: "POST",
-//     body: JSON.stringify(postData),
-// });
+export async function createEntry(data) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts`;
+  const apiMethod = "POST";
+  const apiBody = JSON.stringify(data);
 
-// const entry = await response.json();
-// console.log(entry);
-// }
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
 
-// export async function removeEntry(postData) {
-// const createEntryURL = API_SOCIAL_URL + action;
-// const token = load("token");
+  if (!response.ok) {
+    throw new Error(`Invalid input data: Http Status ${response.status}`);
+  }
 
-// const response = await authfetch(createEntryURL, {
-//     method: "POST",
-//     body: JSON.stringify(postData),
-// });
+  return await response.json();
+}
 
-// const entry = await response.json();
-// console.log(entry);
-// }
+export async function updateEntry(id, data) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts/${id}`;
+  const apiMethod = "PUT";
+  const apiBody = JSON.stringify(data);
+
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
+
+  if (!response.ok) {
+    throw new Error(`Invalid input data: Http Status ${response.status}`);
+  }
+
+  return await response.json();
+}
+
+export async function removeEntry(id) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts/${id}`;
+  const apiMethod = "DELETE";
+  const apiBody = "";
+
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
+
+  if (!response.ok) {
+    throw new Error(`Invalid entry id: Http Status ${response.status}`);
+  }
+
+  return await response.json();
+}
+
+export async function reactToEntry(id, emoji) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts/${id}/react/${emoji}`;
+  const apiMethod = "PUT";
+  const apiBody = "";
+
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
+
+  if (!response.ok) {
+    throw new Error(`Invalid entry id: Http Status ${response.status}`);
+  }
+
+  return await response.json();
+}
+
+export async function commentOnEntry(id, data) {
+  const apiEndpoint = `${API_SOCIAL_URL}/posts/${id}/comment`;
+  const apiMethod = "POST";
+  const apiBody = JSON.stringify(data);
+
+  const response = await fetchRequestWithToken(apiEndpoint, apiMethod, apiBody);
+
+  if (!response.ok) {
+    throw new Error(`Invalid entry id: Http Status ${response.status}`);
+  }
+
+  return await response.json();
+}
