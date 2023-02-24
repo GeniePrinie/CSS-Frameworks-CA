@@ -1,8 +1,8 @@
 import { setRegisterFormListener } from "./handlers/registerForm.mjs";
 import { setLoginFormListener } from "./handlers/loginForm.mjs";
 import { setLogoutFormListener } from "./handlers/logoutForm.mjs";
-import { load } from "./globals/storage.mjs";
 import { redirectToHome, redirectToLogin } from "./globals/redirect.mjs";
+import { load } from "./globals/storage.mjs";
 import {
   getEntry,
   createEntry,
