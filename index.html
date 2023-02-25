@@ -88,23 +88,85 @@
 
     <main>
       <div class="testPaste d-flex justify-content-center"></div>
+
       <div class="container d-flex justify-content-center">
-        <div class="card card-custom mt-4 shadow-sm bg-white border-0">
-          <div class="card-body">
-            <div class="row">
-              <img
-                class="col-2 col-sm-2 rounded-circle img-user m-0"
-                src="/img/user1.jpg"
-                alt="Adam Murphy"
-              />
-              <form class="m-0 ps-0 col align-self-center">
-                <input
-                  type="text"
-                  id="comment"
-                  class="form-control rounded-pill"
-                  placeholder="What's on your mind, Adam?"
+        <div
+          class="accordion card card-custom mt-4 shadow-sm bg-white border-0"
+          id="accordionCreatePost"
+        >
+          <div class="card border-0">
+            <div
+              class="card-header bg-white border-0 rounded-bottom"
+              id="headingOne"
+            >
+              <div class="row">
+                <img
+                  class="col-2 col-sm-2 rounded-circle img-user m-0"
+                  src="/img/user1.jpg"
+                  alt="Adam Murphy"
                 />
-              </form>
+
+                <button
+                  class="btn col-3 btn-link fw-bold"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Create a new post
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#accordionCreatePost"
+            >
+              <div class="card-body">
+                <form class="m-0 ps-0 align-self-center">
+                  <input
+                    name="title"
+                    type="text"
+                    id="comment"
+                    class="form-control mb-3"
+                    placeholder="What's the title?"
+                    aria-label="Title of a new post"
+                    required
+                  />
+
+                  <textarea
+                    name="body"
+                    aria-label="Title of a new post"
+                    class="form-control mb-3"
+                    id="formControlTextarea"
+                    placeholder=". . . and the body?"
+                    aria-label="Body of a new post"
+                    rows="3"
+                  ></textarea>
+
+                  <input
+                    type="text"
+                    id="comment"
+                    class="form-control mb-3"
+                    placeholder=". . . and the tag(s)?"
+                    aria-label="Tag(s) of a new post"
+                  />
+
+                  <input
+                    type="url"
+                    id="media"
+                    name="media"
+                    class="form-control mb-3"
+                    placeholder=". . . and the media URL? "
+                    aria-label="Add URL of a media for the new post"
+                  />
+
+                  <button class="btn btn-primary">Post</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
